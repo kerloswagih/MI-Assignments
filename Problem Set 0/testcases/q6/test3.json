@@ -1,0 +1,5 @@
+{
+    "description": "One Unique Letter Subsequence",
+    "input_args": ["'III'","read_text_file('data/sequence2.txt')"],
+    "comparison_args": ["3276"]
+}

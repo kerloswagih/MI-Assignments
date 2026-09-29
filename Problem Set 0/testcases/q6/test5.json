@@ -1,0 +1,5 @@
+{
+    "description": "This time I'm sure it's the optimal solution",
+    "input_args": ["'MIP'","read_text_file('data/sequence4.txt')"],
+    "comparison_args": ["6099475639858"]
+}

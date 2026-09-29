@@ -1,0 +1,5 @@
+{
+    "description": "Bob the builder ~ ~ Yes we can!",
+    "input_args": ["'YES'", "read_text_file('data/sequence1.txt')"],
+    "comparison_args": ["1752453"]
+}

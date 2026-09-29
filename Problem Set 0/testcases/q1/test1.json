@@ -1,0 +1,5 @@
+{
+    "description": "Non-palindrome",
+    "input_args": ["'Welcome to the MI course :)'"],
+    "comparison_args": ["False"]
+}

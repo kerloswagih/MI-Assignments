@@ -1,0 +1,5 @@
+{
+    "description": "I think I reached an optimal solution",
+    "input_args": ["'VIP'","read_text_file('data/sequence3.txt')"],
+    "comparison_args": ["35756637"]
+}

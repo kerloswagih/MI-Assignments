@@ -1,0 +1,5 @@
+{
+    "description": "Case sensitivity is a social construct made by keyboard manufacturers to sell more keys",
+    "input_args": ["'AIbohphObia'"],
+    "comparison_args": ["True"]
+}

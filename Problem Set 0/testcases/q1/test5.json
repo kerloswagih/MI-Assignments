@@ -1,0 +1,5 @@
+{
+    "description": "Spaces are overrated",
+    "input_args": ["'Was it a car or a cat I saw'"],
+    "comparison_args": ["True"]
+}
