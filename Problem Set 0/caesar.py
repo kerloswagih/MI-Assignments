@@ -13,8 +13,40 @@ DechiperResult = Tuple[str, int, int]
 
 def caesar_dechiper(ciphered: str, dictionary: List[str]) -> DechiperResult:
     '''
-        This function takes the ciphered text (string)  and the dictionary (a list of strings where each string is a word).
-        It should return a DechiperResult (see above for more info) with the deciphered text, the cipher shift, and the number of deciphered words that are not in the dictionary. 
+
+    the cipher shifts each lowercase letter forward by a fixed amount  to decode it,
+    i try every possible shift from 0 to 25 and reverse the shift for each candidate text
+    a correct original english sentence should contain the fewest unknown words
+    so I count how many words in each candidate are missing from the provided dictionary 
+    the candidate with the smallest number of missing words is selected
+    and its shift is returned with the final deciphered text
+
     '''
-    #TODO: ADD YOUR CODE HERE
-    utils.NotImplemented()
+    valid_words = set(dictionary)
+    best_text = ciphered
+    best_shift = 0
+    best_wrong = len(ciphered.split())
+
+    for shifts in range(26):
+        decoded_chars = []
+        for ch in ciphered:
+            if ch == ' ':
+                decoded_chars.append(' ')
+            else:
+                shifted = ord(ch) - ord('a')
+                original = (shifted - shifts) % 26
+                decoded_chars.append(chr(ord('a') + original))
+
+        decoded_text = ''.join(decoded_chars)
+        words = decoded_text.split(' ')
+        wrong = sum(1 for word in words if word and word not in valid_words)
+
+        if wrong < best_wrong:
+            best_text = decoded_text
+            best_shift = shifts
+            best_wrong = wrong
+
+    return (best_text, best_shift, best_wrong)
+
+
+caesar_decipher = caesar_dechiper

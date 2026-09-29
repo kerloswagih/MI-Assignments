@@ -4,9 +4,18 @@ import utils
 
 def locate(grid: Grid, item: Any) -> Set[Tuple[int,int]]:
     '''
-    This function takes a 2D grid and an item
-    It should return a list of (x, y) coordinates that specify the locations that contain the given item
-    To know how to use the Grid class, see the file "grid.py"  
+    I scan every cell in the grid and compare its value to the target item
+    the grid class stores values using coordinates in the form (x, y) 
+    so I iterate over all valid x and y positions 
+    whenever a cell matches the item i add that coordinate to a set
+    which automatically removes duplicates 
+
     '''
-    #TODO: ADD YOUR CODE HERE
-    utils.NotImplemented()
+    matches: Set[Tuple[int, int]] = set()
+
+    for y in range(grid.height):
+        for x in range(grid.width):
+            if grid[x, y] == item:
+                matches.add((x, y))
+
+    return matches

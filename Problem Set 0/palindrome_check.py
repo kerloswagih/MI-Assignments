@@ -1,11 +1,16 @@
 import utils
 
 def palindrome_check(string: str) -> bool:
+   
+    ''' 
+    first i convert the text to lowercase so uppercase and lowercase letters is treated the same
+     then i remove all the spaces from the string so that spaces as the instructions say that 
+     they must be igonred then i compared the cleaned string to its reverse and it they are 
+     the same then it is a palindrome and return True otherwise return False
+     
     '''
-    This function takes string and returns whether a string is a palindrome or not
-    A palindrome is a string that does not change if read from left to right or from right to left
-    
-    Check the notes in the instructions pdf for details about the assumptions
-    '''
-    #TODO: ADD YOUR CODE HERE
-    utils.NotImplemented()
+   
+    normalized_string: str = string.lower().replace(" ", "")
+
+    return normalized_string == normalized_string[::-1]
+

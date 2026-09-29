@@ -4,8 +4,19 @@ import utils
 
 def histogram(values: List[Any]) -> Dict[Any, int]:
     '''
-    This function takes a list of values and returns a dictionary that contains the list elements alongside their frequency
-    For example, if the values are [3,5,3] then the result should be {3:2, 5:1} since 3 appears twice while 5 appears once 
+    i use a dictionary because dictionary keys can represent each distinct value
+    while the stored value for each key is the number of times that item has been
+    seen As i iterate through the list i either create a new counter for a value
+    or increment the existing one This produces the frequency map required by the
+    assignment such as {3: 2, 5: 1} for [3, 5, 3]
+
     '''
-    #TODO: ADD YOUR CODE HERE
-    utils.NotImplemented()
+    frequencies: Dict[Any, int] = {}
+
+    for value in values:
+        if value in frequencies:
+            frequencies[value] += 1
+        else:
+            frequencies[value] = 1
+
+    return frequencies
